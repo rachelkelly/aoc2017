@@ -33,11 +33,13 @@ def captchor(numble):
             del seqqq[0]
        
         elif len(seqqq) > 2: 
-            if seqqq[-1] == seqqq[0]:
+            if seqqq[0] == seqqq[-1]:
                 total = total + seqqq[0]
-                seqqq.pop()
+        #        seqqq.pop()
             elif seqqq[0] == seqqq[1]:
                 total = total + seqqq[0]
+            else:
+                print "nothing added here, total:", total
             del seqqq[0]
 
     if len(seqqq) == 0:
