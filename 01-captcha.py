@@ -30,20 +30,30 @@ def captchor(numble):
         elif len(sequence) == 1:
             print "And the total is ...", total
             break
+        elif len(sequence) == 2:
+            if sequence[0] == sequence[1]:
+                total = total + sequence[0]
+                del sequence[0]
+                del sequence[0]
+            else:
+                print "totally total:", total
+                break
         
         # first/last
         if sequence[0] == sequence[-1]:
-            print "sequence[i-1] should be '1':", sequence[j-1]
+#            print "sequence[i-1] should be '1':", sequence[j-1]
             total = total + sequence[0]
-            sequence.pop() # can do this?
+            del sequence[-1]
             del sequence[0]
-            print sequence
-        elif sequence[j] == sequence[j-1]:
-            total = total + sequence[j]
+
+        elif sequence[0] == sequence[1]:
+            total = total + sequence[0]
             del sequence[0]
             del sequence[0]
-            print sequence
             print "total at this time is", total
+
+        else:
+            del sequence[0]
 
 print "11234"
 captchor(11234)
