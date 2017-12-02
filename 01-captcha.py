@@ -45,13 +45,19 @@ def captchor(numble):
     if len(seqqq) == 0:
         print "total:", total
 
-print "11234"
+#"tests"
+
+print "\n11234"
 captchor(11234)
-print "\n1234:"
-captchor(12341)
+
+print "\n1234"
+captchor(1234)
+
 print "\n1111"
 captchor(1111)
+
 print "\n112233"
 captchor(112233)
+
 print "\n9121212129"
 captchor(9121212129)
