@@ -32,7 +32,7 @@ def captchor(numble):
                 total = total + seqqq[0]
             del seqqq[0]
        
-        while len(seqqq) > 2: 
+        elif len(seqqq) > 2: 
             if seqqq[-1] == seqqq[0]:
                 total = total + seqqq[0]
                 seqqq.pop()
