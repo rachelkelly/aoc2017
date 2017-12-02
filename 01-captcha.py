@@ -21,27 +21,23 @@ def captchor(numble):
     for i in stringed:
         seqqq.append(int(i))
 
-    while len(seqqq) != 0:
+    while len(seqqq) > 0:
 
         # last'ns
         if len(seqqq) == 1:
-            print "And the total is ...", total
+            print "Only one left.  And the total is ...", total
             break
         elif len(seqqq) == 2:
             if seqqq[0] == seqqq[1]:
                 total = total + seqqq[0]
-                del seqqq[0]
-            else:
-                print "totally total:", total
-                break
-        
-        if seqqq[-1] == seqqq[0]:
-            total = total + seqqq[0]
             del seqqq[0]
-        elif seqqq[0] == seqqq[1]:
-            total = total + seqqq[0]
-            del seqqq[0]
-        else:
+       
+        while len(seqqq) > 2: 
+            if seqqq[-1] == seqqq[0]:
+                total = total + seqqq[0]
+                seqqq.pop()
+            elif seqqq[0] == seqqq[1]:
+                total = total + seqqq[0]
             del seqqq[0]
 
     if len(seqqq) == 0:
