@@ -1,5 +1,5 @@
 # Day 1 of Advent of Code - Dec 1 2017
-# The captcha requires you to review a sequence of digits (your puzzle
+# The captcha requires you to review a seqqq of digits (your puzzle
 # input [my? their? whose?] and find the sum of all digits that match
 # the next digit in the list.  The list is circular, so the digit after
 # the last digit is the fist digit in the list.
@@ -16,45 +16,35 @@
 
 def captchor(numble):
     stringed = str(numble)
-    sequence = []
+    seqqq = []
     total = 0
     for i in stringed:
-        sequence.append(int(i))
+        seqqq.append(int(i))
 
-    while len(sequence) != 0:
+    while len(seqqq) != 0:
 
         # last'ns
-        if len(sequence) == 1:
+        if len(seqqq) == 1:
             print "And the total is ...", total
             break
-        elif len(sequence) == 2:
-            if sequence[0] == sequence[1]:
-                total = total + sequence[0]
-                del sequence[0]
+        elif len(seqqq) == 2:
+            if seqqq[0] == seqqq[1]:
+                total = total + seqqq[0]
+                del seqqq[0]
             else:
                 print "totally total:", total
                 break
         
-        # first/last
-#        if sequence[0] == sequence[-1]:
-#            print "sequence[0]:", sequence[0], "\nsequence[-1]:", sequence[-1]
-#            total = total + sequence[0]
-#            sequence.pop()
-#            del sequence[0]
-
-        if sequence[-1] == sequence[0]:
-            total = total + sequence[0]
-            del sequence[0]
-
-        elif sequence[0] == sequence[1]:
-            total = total + sequence[0]
-            del sequence[0]
-            print "total at this time is", total
-
+        if seqqq[-1] == seqqq[0]:
+            total = total + seqqq[0]
+            del seqqq[0]
+        elif seqqq[0] == seqqq[1]:
+            total = total + seqqq[0]
+            del seqqq[0]
         else:
-            del sequence[0]
+            del seqqq[0]
 
-    if len(sequence) == 0:
+    if len(seqqq) == 0:
         print "total:", total
 
 print "11234"
