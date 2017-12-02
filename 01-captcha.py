@@ -24,16 +24,12 @@ def captchor(numble):
     while len(sequence) != 0:
 
         # last'n
-        if len(sequence) == 0:
-            print "And the total is ...", total
-            break
-        elif len(sequence) == 1:
+        if len(sequence) == 1:
             print "And the total is ...", total
             break
         elif len(sequence) == 2:
             if sequence[0] == sequence[1]:
                 total = total + sequence[0]
-                del sequence[0]
                 del sequence[0]
             else:
                 print "totally total:", total
@@ -49,17 +45,21 @@ def captchor(numble):
         elif sequence[0] == sequence[1]:
             total = total + sequence[0]
             del sequence[0]
-            del sequence[0]
             print "total at this time is", total
 
         else:
             del sequence[0]
 
+    if len(sequence) == 0:
+        print "total:", total
+
 print "11234"
 captchor(11234)
 print "\n1234:"
 captchor(12341)
+print "\n1111"
+captchor(1111)
 print "\n112233"
 captchor(112233)
-print "\n912121212129"
-captchor(912121212129)
+print "\n9121212129"
+captchor(9121212129)
