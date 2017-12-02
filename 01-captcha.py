@@ -23,7 +23,7 @@ def captchor(numble):
 
     while len(sequence) != 0:
 
-        # last'n
+        # last'ns
         if len(sequence) == 1:
             print "And the total is ...", total
             break
@@ -36,10 +36,14 @@ def captchor(numble):
                 break
         
         # first/last
-        if sequence[0] == sequence[-1]:
-#            print "sequence[i-1] should be '1':", sequence[j-1]
+#        if sequence[0] == sequence[-1]:
+#            print "sequence[0]:", sequence[0], "\nsequence[-1]:", sequence[-1]
+#            total = total + sequence[0]
+#            sequence.pop()
+#            del sequence[0]
+
+        if sequence[-1] == sequence[0]:
             total = total + sequence[0]
-            del sequence[-1]
             del sequence[0]
 
         elif sequence[0] == sequence[1]:
