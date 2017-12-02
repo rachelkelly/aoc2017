@@ -21,7 +21,7 @@ def captchor(numble):
     for i in stringed:
         sequence.append(int(i))
 
-    for j in sequence:
+    while len(sequence) != 0:
 
         # last'n
         if len(sequence) == 0:
