@@ -16,16 +16,11 @@
 # How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port?
 
 def spiralizer():
-    first = "1"
-    two_on = "\n2"
-    three_on = "3", two_on
-    fourth_on = "4", first
-    fifth = "5"
-    sixth = fifth, "6"
-    seventh = sixth, "7"
-
-    print seventh
-    print fourth_on
-    print three_on
+    """
+    repeatedly iterate direction to go: e, s, w, n
+    if no direction, take first direction in list ^^
+    if neighbor on two sides, use same direction as before
+    if neighbor on only one side, "corner" assumed and iterate to next direction
+    """
 
 spiralizer()
