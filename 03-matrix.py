@@ -17,7 +17,7 @@
 
 def spiralizer(the_ins):
     """
-    repeatedly iterate direction to go: e, s, w, n
+    repeatedly iterate direction to go: e, n, w, s
     if no direction, take first direction in list ^^
     if neighbor on two sides, use same direction as before
     if neighbor on only one side, "corner" assumed and iterate to next direction
@@ -37,6 +37,7 @@ def spiralizer(the_ins):
         row.replace("  ", "")
         row_H1 += str(incrementor) + "  "
         incrementor += 1
+        the_ins -= 1
 
     def e(current):
         new = current, """  %d  """
@@ -50,8 +51,11 @@ def spiralizer(the_ins):
     def s():
         pass
 
+    def which_way():
+        pass
+
     final = """ """
-    final = '"""', '\nrow_L1', row, '"""'
+    final = '"""', '\n' row_L1,  row, '"""'
     print final
 
 spiralizer(10)
