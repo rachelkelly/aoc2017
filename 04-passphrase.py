@@ -7,23 +7,16 @@
 
 def phrase_eater():
     list_of_crunch = []
-    FLAVOR_LESS = []
     name = raw_input("filename? \n> ")
     f = open(name, "r")
+
     for line in f:
         words = line.split(" ")
         for word in words:
-            if word in list_of_crunch:
-#                print "this shit is already in crunchtown:", word
-                FLAVOR_LESS.append(word)
-                pass
-            elif word not in list_of_crunch:
-                print "adding", word
-                list_of_crunch.append(word)
-    if '\n' in list_of_crunch:
-        list_of_crunch.remove('\n')
+            list_of_crunch.append(word)
+
+    set_of_crunch = set(list_of_crunch)
     f.close()
-    print "re-to-three-peats", len(FLAVOR_LESS)
-    print "uniques:", len(list_of_crunch)
+    print "uniques:", len(set_of_crunch)
 
 phrase_eater()
