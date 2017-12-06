@@ -6,17 +6,21 @@
 # - aa bb cc dd aaa is valid - aa and aaa count as different words.
 
 def phrase_eater():
-    list_of_crunch = []
     name = raw_input("filename? \n> ")
     f = open(name, "r")
 
+    biggerall = []
     for line in f:
         words = line.split(" ")
-        for word in words:
-            list_of_crunch.append(word)
+        wordset = set(words)
+        if len(words) == len(wordset):
+            print line
+            biggerall.append(line)
+        else:
+#            print "find the dupe, ya dupe:", words
+            pass
 
-    set_of_crunch = set(list_of_crunch)
     f.close()
-    print "uniques:", len(set_of_crunch)
+    print "uniques:", len(biggerall)
 
 phrase_eater()
