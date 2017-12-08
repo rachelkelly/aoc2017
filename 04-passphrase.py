@@ -6,19 +6,14 @@
 # - aa bb cc dd aaa is valid - aa and aaa count as different words.
 
 def phrase_eater():
-    name = raw_input("filename? \n> ")
-    f = open(name, "r")
+    f = open("04-input.txt", "r")
 
     biggerall = []
     for line in f:
-        words = line.split(" ")
+        words = line.split()
         wordset = set(words)
         if len(words) == len(wordset):
-            print line
             biggerall.append(line)
-        else:
-#            print "find the dupe, ya dupe:", words
-            pass
 
     f.close()
     print "uniques:", len(biggerall)
