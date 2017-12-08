@@ -9,13 +9,30 @@ def phrase_eater():
     f = open("04-input.txt", "r")
 
     biggerall = []
+    craigerall = [] # what even am variable name
     for line in f:
         words = line.split()
+
+        # part 2
+        parttwo = []
+        comptor = ""
+        for i in words:
+            parttwo = []
+            for j in i:
+                parttwo.append(j)
+                settwo = set(parttwo)
+            if settwo == comptor:
+                continue
+            else:
+                craigerall.append(words)
+        #
+
         wordset = set(words)
         if len(words) == len(wordset):
             biggerall.append(line)
 
     f.close()
     print "uniques:", len(biggerall)
-
+    print "craigs:", len(craigerall)
+    
 phrase_eater()
