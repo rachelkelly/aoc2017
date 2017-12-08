@@ -18,7 +18,20 @@ def summee():
             limenate.append(int(i))
         diff = max(limenate) - min(limenate)
         totalis += diff
+
+        for j in limenate:
+            if limenate[j] == limenate[-1]:
+                continue
+            else:
+                k = j+1
+            if j % k == 0:
+                even = j%k
+                print "j:", j, "k:", k, "divisbbble:", even
+            else:
+                print "indivisible?"
+
     print totalis
     f.close()
         
 summee()
+
