@@ -14,6 +14,7 @@ def phrase_eater():
         words = line.split()
 
         # part 2
+        # use sort() here
         parttwo = []
         comptor = ""
         for i in words:
