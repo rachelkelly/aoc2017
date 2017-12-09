@@ -15,37 +15,26 @@
 # 9121212129 produces 9 because only the first and last digit are sequential
 
 def captchor(numble):
+    """
+    makes a sequence, then increments doubly with an artificial index of j,
+    which is always 1 index behind, so it never exceeds bounds.
+    """
     stringed = str(numble)
     seqqq = []
-    total = 0
-    for i in stringed:
-        seqqq.append(int(i))
+    for k in stringed:
+        seqqq.append(int(k))
 
-    while len(seqqq) > 0:
+    newTote = 0
+    j = 0
+    if seqqq[0] == seqqq[-1]:
+        newTote += seqqq[0]
+    for i in seqqq:
+        if i == j:
+            newTote += j
+        j = i # setting so that j will have value on subsequent loops
 
-        # last'ns
-        if len(seqqq) == 1:
-            print "Only one left.  And the total is ...", total
-            break
-        elif len(seqqq) == 2:
-            if seqqq[0] == seqqq[1]:
-                total = total + seqqq[0]
-            del seqqq[0]
-       
-        elif len(seqqq) > 2: 
-            if seqqq[0] == seqqq[-1]:
-                total = total + seqqq[0]
-            elif seqqq[0] == seqqq[1]:
-                total = total + seqqq[0]
-            else:
-#                print "nothing added here, total:", total
-                pass
-            del seqqq[0]
+    print newTote
 
-    if len(seqqq) == 0:
-        print "total:", total
-
-#"tests"
 
 print "333"
 captchor(333)
