@@ -7,12 +7,19 @@ def mazeloser(filette):
     f = open(filette, "r")
     yomp = []
     for item in f:
-        yomp.append(item.strip())
+        yomp.append(int(item.strip()))
 
     print yomp
 
-    for i in yomp:
-        
+    i = 0
+    while True:
+        HEAD = yomp[i]
+        oldy = yomp[i]
+        print "current HEAD >>>", HEAD
+        HEAD = yomp[i+HEAD]
+        print "original index in yomp was:", i
+        print "original numerator in yomp was:", oldy
+        yomp[i] += 1
 
 mazeloser("05-input-headzo.txt")
 #mazeloser("05-input.txt")
